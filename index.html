@@ -50,8 +50,10 @@
                             <h2 id="name" class="name">${obj.name}</h2>
                             <p class="for">for:</p>
                             
-                            <a href="${obj.source}" target="_blank">SOURCE</a>
-                            <a href="${obj.download}" target="_blank">DOWNLOAD</a>
+                            <button type="button" onclick="window.location.href='${obj.source}'">↺ Return</button>
+                            <button type="button" onclick="window.location.href='${obj.download}'">↺ Return</button>
+                            <!--<a href="${obj.source}" target="_blank">SOURCE</a>-->
+                            <!--<a href="${obj.download}" target="_blank">DOWNLOAD</a>-->
                     </div>
                     `;
                     a.appendChild(b);
