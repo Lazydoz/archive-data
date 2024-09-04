@@ -12,11 +12,11 @@
 <body>
     <div class="navbar">
         <button class="btn" type="button" onclick="window.location.href='https://lazydoz.github.io/base/'">↺ Return</button>
-        <button class="btn" type="button">Avatar</button>
-        <button class="btn" type="button">Cloth</button>
-        <button class="btn" type="button">Hair</button>
-        <button class="btn" type="button">Asset</button>
-        <button class="btn" type="button">Texture</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/index.html'">Avatar</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/asset.html'">Asset</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/cloth.html'">Cloth</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/hair.html'">Hair</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/texture.html'">Texture</button>
     </div>
     <div class="content" id="content">
         <!--<div class="obj">
@@ -38,6 +38,7 @@
         const a = document.querySelector("#content");
         
         const file = f1;
+
         fetch(file)
             .then(response => response.json())
             .then(data => {
