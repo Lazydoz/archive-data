@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazydo - archive</title>
+
+    <link rel="stylesheet" href="/archive/style/navbar.css">
+    <link rel="stylesheet" href="/archive/style/content.css">
+    <link rel="stylesheet" href="/archive/style/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <button class="btn" type="button" onclick="window.location.href='https://lazydoz.github.io/base/'">↺ Return</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/index.html'">Avatar</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/asset.html'">Asset</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/cloth.html'">Cloth</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/hair.html'">Hair</button>
+        <button class="btn" type="button" onclick="window.location.href='/archive/page/texture.html'">Texture</button>
+    </div>
+    <div class="content" id="content">
+        <!--<div class="obj">
+            <img src="https://booth.pximg.net/04fb9bb1-3453-458f-bea3-43f284ed8023/i/5942778/0cff327c-9b6f-4863-959d-3c3e5cbf7cd0_base_resized.jpg" alt="">
+            <div class="info">
+                <h2 id="name" class="name">Hair</h2>
+                <p class="for">for:</p>
+                <button class="dl-btn" type="button" style="width: 5vw;">DOWNLOAD</button>
+            </div>
+        </div>-->
+    </div>
+    <script>
+        const f1 = "/archive/data/base.json";
+        const f2 = "/archive/data/asset.json";
+        const f3 = "/archive/data/cloth.json";
+        const f4 = "/archive/data/hair.json";
+        const f5 = "/archive/data/textures.json";
+
+        const a = document.querySelector("#content");
+        
+        const file = f3;
+
+        fetch(file)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(obj => {
+                    const b = document.createElement("div");
+                    b.classList.add("obj");
+                    b.innerHTML = `
+                        <img src="${obj.img}" alt="">
+                        <div class="info">
+                            <h2 id="name" class="name">${obj.name}</h2>
+                            <p class="for">for:</p>
+                            
+                            <button type="button" style="width: 5vw" onclick="window.location.href='${obj.source}'">SOURCE</button>
+                            <button type="button" style="width: 5vw" onclick="window.location.href='${obj.download}'">DOWNLOAD</button>
+                            <!--<a href="${obj.source}" target="_blank">SOURCE</a>-->
+                            <!--<a href="${obj.download}" target="_blank">DOWNLOAD</a>-->
+                    </div>
+                    `;
+                    a.appendChild(b);
+                });
+            })
+    </script>
+</body>
+</html>
